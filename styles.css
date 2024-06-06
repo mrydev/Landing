@@ -1,0 +1,194 @@
+/* Genel ayarlar */
+* {
+    text-decoration: none;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+    background-color: #191919;
+    margin: 0;
+    padding: 0;
+    color: white;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+/* Nav ayarları */
+nav {
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 1em;
+}
+
+nav ul li.logo {
+    flex-grow: 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 0.25em;
+}
+
+/* Ana içerik stili */
+main {
+    text-align: center;
+    scroll-snap-type: y mandatory;
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    scroll-snap-align: start;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section h1, .section h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.section p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    color: white;
+    background-color: #007BFF;
+    text-decoration: none;
+    border-radius: 0.25em;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Footer stili */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+/* Home section içeriği */
+.home-content {
+    display: flex;
+    max-width: 1200px; /* İçeriğin maksimum genişliğini belirleyebilirsiniz */
+    justify-content: space-between; /* İçeriği iki bölüm arasında paylaştırır */
+}
+
+.left-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1em;
+}
+
+.centered-content {
+    text-align: center;
+}
+
+.right-content {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap; /* Kartları bir satırda sığmazsa alt satıra geçsin */
+    justify-content: center;
+    gap: 1em; /* Kartlar arasındaki boşluğu ayarlayabilirsiniz */
+    width: 50%; /* Sağ içeriğin yüzde 50 genişliği */
+}
+
+.centered-content img {
+    background-color: #333;
+
+    padding: 1.5em;
+   
+   
+    text-align: center;
+}
+
+.button {
+    height: 50px;
+    width: 200px;
+    position: relative;
+    background-color: transparent;
+    cursor: pointer;
+    border: 2px solid #252525;
+    overflow: hidden;
+    border-radius: 30px;
+    color: #333;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .btn-txt {
+    z-index: 1;
+    font-weight: 800;
+    letter-spacing: 4px;
+  }
+
+  
+  .type1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.5s ease-in-out;
+    background-color: #333;
+    border-radius: 30px;
+    visibility: hidden;
+    height: 10px;
+    width: 10px;
+    z-index: -1;
+  }
+  
+  .button:hover {
+    box-shadow: 1px 1px 200px #252525;
+    color: #fff;
+    border: none;
+  }
+  
+  .type1:hover::after {
+    visibility: visible;
+    transform: scale(100) translateX(2px);
+  }
+  
